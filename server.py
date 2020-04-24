@@ -15,6 +15,7 @@ def uploadNotification(video_id, video_title, course):
         "click_action":"FLUTTER_NOTIFICATION_CLICK",
         "route":"youtube"
     }
+    # Changed message_icon to  ['notification']['image'] field in library files for my use case
     result = push_service.notify_topic_subscribers(topic_name=course, message_title="A new video has been uploaded", message_body="Please tap on this notification to continue", data_message=data, message_icon=f"https://img.youtube.com/vi/{data['video_url']}/hqdefault.jpg")
 
     if result['success'] == 1:
